@@ -7,10 +7,10 @@ export default function QuoteContent({ quotes }: Record<any, any>) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   function nextQuote() {
-    setActiveIndex((prev) => prev + 1);
+    setActiveIndex(activeIndex === quotes.length - 1 ? 0 : activeIndex + 1);
   }
   function previousQuote() {
-    setActiveIndex((prev) => prev - 1);
+    setActiveIndex(activeIndex === 0 ? quotes.length - 1 : activeIndex - 1);
   }
 
   return (
