@@ -17,9 +17,12 @@ export default function QuoteContent({ quotes }: Record<any, any>) {
     <>
       <div>
         <p className='text-slate-300 max-w-lg text-lg md:text-xl lg:text-2xl  italic'>
-          "{quotes[activeIndex].text}"
+          &quot;{quotes[activeIndex].text}&quot;
         </p>
-        <p className='text-slate-400 text-base md:text-lg mt-8'> - {quotes[activeIndex].author}</p>
+        <p className='text-slate-400 text-base md:text-lg mt-8'>
+          {' '}
+          {'-'} {quotes[activeIndex].author}
+        </p>
       </div>
       <Controls handleNextQuote={nextQuote} previousQuote={previousQuote} />
       <Socials />
