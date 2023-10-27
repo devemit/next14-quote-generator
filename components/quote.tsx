@@ -1,9 +1,10 @@
 import getQuotes from '@/data';
 import { Suspense } from 'react';
 import QuoteContent from './quote-content';
+import { QuoteProps } from '@/types';
 export default async function Quote() {
-  const data: Promise<any> = getQuotes();
-  const quotes = await data;
+  const data = getQuotes();
+  const quotes: QuoteProps = await data;
 
   return (
     <>

@@ -3,7 +3,12 @@ import { useState } from 'react';
 import Controls from './controls';
 import Socials from '@/components/socials';
 
-export default function QuoteContent({ quotes }: Record<any, any>) {
+type Quote = {
+  text: string;
+  author: string;
+};
+
+export default function QuoteContent({ quotes }: { quotes: Quote[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   function nextQuote() {
